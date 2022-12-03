@@ -8,6 +8,7 @@
 **/.toolstarget
 **/.vs
 **/.vscode
+**/.github
 **/*.*proj.user
 **/*.dbmdl
 **/*.jfm
@@ -20,4 +21,8 @@
 **/obj
 **/secrets.dev.yaml
 **/values.dev.yaml
+**/jest.config.js
+**/setupTests.ts
+**/__tests__
 README.md
+LICENSE

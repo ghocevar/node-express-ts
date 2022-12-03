@@ -9,13 +9,14 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(helmet(), compression(), limiter, express.json());
 
-app.get('/', (request: Request, response: Response) => {
-  return response.json({ message: 'Hi Mom 👋' });
+app.get('/', (_request: Request, response: Response) => {
+  return response.json({
+    message: 'Hello, World!',
+  });
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
-// listen to port
 app.listen(port, async () => {
   console.log(`🚀 Server ready at: http://localhost:${port}`);
 });
