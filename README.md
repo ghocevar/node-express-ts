@@ -7,7 +7,7 @@ A boilerplate/starter project for quickly building RESTful APIs and with typescr
 Install the dependencies:
 
 ```bash
-yarn install
+pnpm install
 ```
 
 Set the environment variables:
@@ -23,48 +23,24 @@ cp .env.example .env
 Running locally:
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
-Kill locally:
+Build project for production:
 
 ```bash
-yarn kill
+pnpm build
 ```
 
 Running in production:
 
 ```bash
-yarn start:dev
+pnpm start
 ```
 
 Testing:
 
 ```bash
 # run all tests
-yarn test
+pnpm test
 ```
-
-Build:
-
-```bash
-yarn build
-```
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-<hr>
-
-## Authors
-
-- [@Youssef Hajjari](https://twitter.com/Yosufuu)
-- [@Youness Hassoune](https://twitter.com/YounessHassoune)
-- [@Othmane Kahtal](https://twitter.com/KahtalMi)
