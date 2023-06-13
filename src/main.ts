@@ -1,16 +1,16 @@
 import 'dotenv/config';
 import app from './app';
 
-process.on('uncaughtException', err => {
-  console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
-  console.log(err.name, err.message);
-  process.exit(1);
-});
-
 const port = process.env.PORT || 8000;
 
 const server = app.listen(port, async () => {
   console.log(`🚀 Server ready at: http://localhost:${port}`);
+});
+
+process.on('uncaughtException', err => {
+  console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
+  console.log(err.name, err.message);
+  process.exit(1);
 });
 
 process.on('unhandledRejection', (err: Error) => {

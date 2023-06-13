@@ -1,6 +1,4 @@
-ARG NODE_VERSION=18.12.1
-
-FROM node:${NODE_VERSION} AS builder
+FROM node:18 AS builder
 WORKDIR /usr/src/app
 
 RUN npm install -g pnpm
