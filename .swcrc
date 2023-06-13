@@ -1,19 +1,8 @@
 {
   "minify": true,
   "jsc": {
-    "baseUrl": "src",
     "paths": {
-      "@lib/*": ["lib/*"],
-      "@utils/*": ["utils/*"],
-      "@types/*": ["types/*"],
-      "@routes/*": ["routes/*"],
-      "@services/*": ["services/*"],
-      "@models/*": ["models/*"],
-      "@controllers/*": ["controllers/*"],
-      "@middlewares/*": ["middlewares/*"],
-      "@interfaces/*": ["interfaces/*"],
-      "@errors/*": ["errors/*"],
-      "@config/*": ["config/*"]
+      "@/*": ["./src/*"]
     },
     "parser": {
       "syntax": "typescript"

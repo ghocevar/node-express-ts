@@ -1,8 +1,8 @@
 import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
-import { HttpException } from '@errors/http';
+import { HttpError } from '@/types/HttpError';
 
 export const errorHandler: ErrorRequestHandler = (
-  error: HttpException,
+  error: HttpError,
   _req: Request,
   res: Response,
   _next: NextFunction
@@ -13,7 +13,7 @@ export const errorHandler: ErrorRequestHandler = (
 
   const status = error.status || 500;
   const message = error.message || 'Something went wrong';
-  res.status(status).send({
+  res.status(status).json({
     status: 'error',
     message,
   });

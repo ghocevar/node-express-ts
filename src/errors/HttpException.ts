@@ -1,7 +1,4 @@
-type HttpError = {
-  status: number;
-  message: string;
-};
+import { HttpError } from '@/types/HttpError';
 
 export class HttpException extends Error {
   status: number;
