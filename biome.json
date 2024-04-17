@@ -1,0 +1,23 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.7.0/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"formatter": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	},
+	"files": {
+		"ignore": [
+			"**/dist/**",
+			"**/node_modules/**",
+			"**/.git/**",
+			"**/.DS_Store/**"
+		]
+	}
+}
