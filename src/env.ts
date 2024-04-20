@@ -2,12 +2,28 @@ import { z } from "zod";
 
 const envSchema = z.object({
 	NODE_ENV: z.enum(["development", "production"]).default("development"),
-	PORT: z.string().transform(Number),
+	PORT: z.string().transform(Number).optional(),
 	DATABASE_URL: z.string(),
 	APP_HOSTNAME: z.string().optional(),
 	APP_URL: z.string().optional(),
 });
 
-type Env = z.infer<typeof envSchema>;
+declare global {
+	namespace NodeJS {
+		interface ProcessEnv extends z.infer<typeof envSchema> {}
+	}
+}
 
-export const createEnv = (): Env => envSchema.parse(process.env);
+try {
+	envSchema.parse(process.env);
+} catch (err) {
+	if (err instanceof z.ZodError) {
+		const { fieldErrors } = err.flatten();
+		const errorMessage = Object.entries(fieldErrors)
+			.map(([field, errors]) =>
+				errors ? `${field}: ${errors.join(", ")}` : field,
+			)
+			.join("\n  ");
+		throw new Error(`Missing environment variables:\n  ${errorMessage}`);
+	}
+}

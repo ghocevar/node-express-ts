@@ -1,9 +1,9 @@
-import express, { type Response, type Request } from "express";
 import compression from "compression";
+import express, { type Response, type Request } from "express";
 import helmet from "helmet";
-import { limiter } from "./middlewares/limiter.js";
-import { errorHandler } from "./middlewares/errorHandler.js";
 import { NotFoundException } from "./errors/HttpException.js";
+import { errorHandler } from "./middlewares/errorHandler.js";
+import { limiter } from "./middlewares/limiter.js";
 
 const app = express();
 

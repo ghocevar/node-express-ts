@@ -1,9 +1,7 @@
 import app from "./app.js";
-import { createEnv } from "./env.js";
+import "./env.js";
 
-const env = createEnv();
-
-const port = env.PORT || 8000;
+const port = process.env.PORT || 8000;
 
 const server = app.listen(port, async () => {
 	console.log(`🚀 Server ready at: http://localhost:${port}`);
